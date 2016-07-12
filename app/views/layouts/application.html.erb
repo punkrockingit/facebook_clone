@@ -20,7 +20,8 @@
       </div>
 <% if user_signed_in? %>
         <div id="navbar" class="navbar-collapse collapse" >
-          <form class="navbar-form navbar-nav" role="search">
+          <!--<form class="navbar-form navbar-nav" role="search" action="/profile/search" method="post">
+            <%#= form_for(@search, url: {action: '/profile/search'}) do |f| %>
             <div class="form-group">
               <div class="input-group" >
                 <label for="search" class="sr-only">Search:</label>
@@ -28,12 +29,13 @@
               </div>
             </div>
             <button type="submit" class="btn btn-default btn-search"><span class="glyphicon glyphicon-search"></span></button>
-          </form>
+          </form>-->
+          <%#end %>
           <ul id="icon-nav" class="nav navbar-nav navbar-right">
             <li><a href="/profile/" class="text"><%=current_user.first_name%></a></li>
-            <li><a href="#" class="icon"><span class="sprite-friends">1</span></a></li>
-            <li><a href="#" class="icon"><span class="sprite-messages"></span></a></li>
-            <li><a href="#" class="icon"><span class="sprite-notifications"></span></a></li>
+            <li><a href="/profile/browse" class="icon"><span class="sprite-friends"></span></a></li>
+            <!--<li><a href="#" class="icon"><span class="sprite-messages"></span></a></li>
+            <li><a href="#" class="icon"><span class="sprite-notifications"></span></a></li>-->
             <!--<li><a href="#"><span class="sprite-privacy"></span></a></li>-->
             <li><a href="/sign_out/" class="text">Sign Out</a></li>
           </ul>

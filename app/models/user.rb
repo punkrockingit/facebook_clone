@@ -1,10 +1,13 @@
 class User < ActiveRecord::Base
 
+
   class << columns_hash['birthday']
     def type
       :date
     end
   end
+
+  mount_uploader :profile_image, ProfileImageUploader
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

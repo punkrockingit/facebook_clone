@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
+  get '/profile/browse' => 'profile#browse'
   get '/profile/:id' => 'profile#index'
   get '/profile/' => 'profile#index'
   get '/profile' => 'profile#index'
@@ -26,6 +27,9 @@ Rails.application.routes.draw do
   post '/profile/update/:id' => 'profile#update'
   patch '/profile/update/:id/' => 'profile#update'
   patch '/profile/update/:id' => 'profile#update'
+
+
+  #post '/profile/search/' => 'profile#search'
 
   resources :users
 

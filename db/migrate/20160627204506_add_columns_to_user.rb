@@ -9,5 +9,7 @@ class AddColumnsToUser < ActiveRecord::Migration
     add_column :users, :from_state, :string
     add_column :users, :lives_in_city, :string
     add_column :users, :lives_in_state, :string
+    add_column :users, :profile_image, :string
+    add_column :users, :cover_photo, :string
   end
 end

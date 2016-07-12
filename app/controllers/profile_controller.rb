@@ -35,9 +35,13 @@ class ProfileController < ApplicationController
     end
   end
 
+  def browse
+    @users = User.all
+  end
+
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :birthday, :gender, :works_for, :from_city, :from_state,
-    :lives_in_city, :lives_in_state)
+    :lives_in_city, :lives_in_state, :profile_image, :cover_photo)
   end
 
 end

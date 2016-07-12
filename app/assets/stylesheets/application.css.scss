@@ -288,7 +288,7 @@ header {
     color: #ffffff;
     z-index: 2;
 }
-a.friend {
+a.friend, a.edit {
     position: absolute;
     right: 2em;
     bottom: 1.5em;
@@ -303,7 +303,7 @@ a.friend {
     border: 1px solid #000000;
     z-index: 10;
 }
-a.friend:hover {
+a.friend:hover, a.eidt:hover {
     text-decoration: none;
     background-color: #e0e0e0;
 }
@@ -457,11 +457,25 @@ a.friend:hover {
 }
 
 /****Profile Edit *********/
-input.input_left{
+.edit .input_left{
   margin-right: 1.6%;
   width: 49.2%;
 }
 
-input.input_right{
+.edit .input_right{
   width: 49.2%;
+}
+.edit .labels, .edit label{
+  margin-bottom: 0;
+}
+.edit .radio {
+  margin-top: 0;
+}
+
+
+.userlist li{
+  margin: 5px;
+  padding: 0;
+  width: 10em;
+  background-color: #73b25e;
 }

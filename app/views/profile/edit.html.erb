@@ -1,0 +1,62 @@
+<div class="container">
+  <%= form_for(@user, :html => {:class => 'col-md-5 pull-left edit', multipart: true}, url: {action: 'update', params: {id: @user.id}})  do |f| %>
+      <h2>
+        Edit Profile
+      </h2>
+      <%#= render 'shared/error_messages' %>
+      <input type='hidden' name="user_id" value="<%#= user.id %>"/>
+      <div class="form-group">
+        <!--<%= f.label :profile_image%>
+        <%= f.file_field :profile_image%>-->
+        <div class="input-group labels">
+          <%= f.label :first_name, :class => 'label-control pull-left input_left'%>
+          <%= f.label :last_name, :class => 'label-control pull-left input_right'%>
+        </div>
+        <div class="input-group ">
+          <%= f.text_field :first_name, :class => 'form-control pull-left input_left', :placeholder =>'First Name', :required => true %>
+          <%= f.text_field :last_name, :class => 'form-control pull-left text input_right', :placeholder =>"Last Name", :required => true %>
+        </div>
+        <%= f.label :email%>
+        <div class="input-group" >
+          <%= f.text_field :email, :class => 'form-control text', :placeholder =>'Email', :required => true %>
+        </div>
+        <!--<label for="month">Birthday</label>
+        <div class="input-group">
+          <%= f.date_select 'birthday', {:order => [:month, :day, :year], :start_year => 1920, :prompt => {:month =>'Month', :day => 'Day', :year => 'Year'}}, :required => true, :class => 'selectpicker'  %>
+        </div>-->
+        <label>Gender:</label>
+        <div class="input-group radio" >
+          <label for="user_gender_female" class="radio-inline">
+            <%= f.radio_button :gender, 'female',  :class => 'form-control radio-btn', :required => true %>
+            &nbsp;Female
+          </label>
+          <label for="user_gender_male" class="radio-inline">
+            <%= f.radio_button :gender, 'male',  :class => 'form-control full-size radio-btn', :required => true %>&nbsp;Male
+          </label>
+        </div>
+        <%= f.label :works_for%>
+        <label for="from_state" class="sr-only">Works For:</label>
+        <div class="input-group ">
+          <%= f.text_field :works_for, :class => 'form-control pull-left text', :placeholder =>'Work For'%>
+        </div>
+        <div class="input-group labels">
+          <%= f.label :lives_in_city, :class => 'label-control pull-left input_left'%>
+          <%= f.label :lives_in_state, :class => 'label-control pull-left input_right'%>
+        </div>
+        <div class="input-group ">
+          <%= f.text_field :lives_in_city, :class => 'form-control pull-left text input_left', :placeholder =>'Lives In City'%>
+          <%= f.text_field :lives_in_state, :class => 'form-control pull-left text input_right', :placeholder =>'Lives In State'%>
+        </div>
+        <div class="input-group labels">
+          <%= f.label :from_city, :class => 'label-control pull-left input_left'%>
+          <%= f.label :from_state, :class => 'label-control pull-left input_right'%>
+        </div>
+        <div class="input-group ">
+          <%= f.text_field :from_city, :class => 'form-control pull-left text input_left', :placeholder =>'From City'%>
+          <%= f.text_field :from_state, :class => 'form-control pull-left text input_right', :placeholder =>'From State'%>
+        </div>
+
+        <%= f.submit 'Save', :class => 'btn'%>
+      </div>
+  <% end %> <!--End form-->
+</div>

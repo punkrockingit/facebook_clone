@@ -1,0 +1,12 @@
+<div class="container">
+  <div id="leftcol" class="col-md-3 col-xs-9 clearfix">
+    <div class="component-left">
+      <h4>Browse for Users</h4>
+      <ul id="userlist">
+        <% @users.each do |user|%>
+            <li><a href="/profile/<%= user.id %>"><%= user.first_name.to_s + ' ' + user.last_name.to_s%></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
